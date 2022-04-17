@@ -1,6 +1,5 @@
 # Simple Python Network Scanner
-
-For Windows 10 Winpcap is required.
+Python 3.9+ is required, tested on Kali Linux.
 
 ## Example Usage
 
@@ -11,11 +10,6 @@ python3 -m nscan 192.168.0.0/24
 
 Output
 ```
-Begin emission:
-Finished sending 256 packets.
-***............*...........
-Received 27 packets, got 4 answers, remaining 252 packets
-
 IP Address		 MAC Address
 ------------------------------------------
 192.168.0.1 		 ac:22:05:4f:f9:1f

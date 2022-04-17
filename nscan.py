@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import scapy.all as scapy
+from tabnanny import verbose
+from scapy.all import ARP, Ether, srp
 import argparse
 
 
@@ -11,11 +12,11 @@ def get_arguments():
     return parser.parse_args()
 
 def scan(ip):
-    arp_request = scapy.ARP(pdst=ip)
-    broadcast = scapy.Ether(dst=DESTINATION)
+    arp_request = ARP(pdst=ip)
+    broadcast = Ether(dst=DESTINATION)
     arp_request_broadcast = broadcast/arp_request
     # using srp insted of sr because of custom ether
-    answerred, _ = scapy.srp(arp_request_broadcast, timeout=1)
+    answerred, _ = srp(arp_request_broadcast, timeout=1, verbose=0)
     
     clients = []
     for element in answerred:
