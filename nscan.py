@@ -15,7 +15,6 @@ def scan(ip):
     arp_request = ARP(pdst=ip)
     broadcast = Ether(dst=DESTINATION)
     arp_request_broadcast = broadcast/arp_request
-    # using srp insted of sr because of custom ether
     answerred, _ = srp(arp_request_broadcast, timeout=1, verbose=0)
     
     clients = []
